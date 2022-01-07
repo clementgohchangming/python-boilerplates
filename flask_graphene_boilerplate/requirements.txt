@@ -1,0 +1,7 @@
+Flask==1.1.2                # Flask Backend Library
+Flask-GraphQL==2.0.1        # Flask-GraphQL Interoperability Library
+bjoern==2.0.5               # Webserver Gateway Interface Library, used to interface flask with webserver
+graphql-core==2.3.2         # Graphql Core Library
+pydantic==1.6               # Type-safe model library. Asserts type safety of object fields to avoid type-related bugs
+graphene-pydantic==0.1.0    # Interoperability Library between pydantic pydantic_models and graphene pydantic_models
+python-json-logger==2.0.2   # Formats the logs from the python logger into a json object. Json logs are easier to parse and log in log monitoring systems
