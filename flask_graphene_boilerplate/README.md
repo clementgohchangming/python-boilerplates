@@ -18,6 +18,30 @@ Step 2: Bring up the python application
 python3 app.py
 ```
 
+## Bringing up the application locally with docker
+
+This repository contains a Dockerfile, which contains instructions to create a docker image.
+
+This docker image then can be run to bring up the application, encapsulated in a docker container.
+
+Step 1: To build a docker image with the Dockerfile, run the following command
+
+This command builds a docker image with the Dockerfile in the current directory (`.`), with the tag `boilerplate`. 
+
+This tag can later be used to refer to this docker image.
+
+```commandline
+docker build -t boilerplate .
+```
+
+Step 2: Use the docker image `boilerplate` to bring up the application. 
+
+Expose the port 5000 on the docker container (same port on the docker container hosting the python application) to our localhost port 6000, so we can make requests to the python application on our local port 6000.
+
+```commandline
+docker run -p 6000:5000 -t boilerplate
+```
+
 ## Making a request to healthcheck
 
 We can either make a request as a client to our local python backend server via a `curl` GET request 
