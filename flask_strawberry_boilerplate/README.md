@@ -1,4 +1,4 @@
-# Flask-Graphql Backend Boilerplate (With Graphene)
+# Flask-Graphql Backend Boilerplate (with Strawberry)
 
 This repository contains a sample boilerplate for you to quickly bring up a python backend application.
 
@@ -57,21 +57,16 @@ or through an API design platform such as Insomnia
 ## Making a request to our GraphQL Python Backend Server
 
 ```commandline
-(base) MacBook-Pro-2:python-boilerplates gohchangmingclement$ curl --request POST \
->   --url http://localhost:5000/graphql \
->   --header 'Content-Type: application/json' \
->   --data '{"query":"query GetUser($input: UserInput!) {\n\tusers(userInput: $input) {\n\t\tname\n\t}\n}","variables":{"input":{"name":"Eugene"}},"operationName":"GetUser"}'
-{"data":{"users":{"name":"Eugene"}}
+MacBook-Pro-2:python-boilerplates gohchangmingclement$ curl --request POST   --url http://localhost:6000/graphql   --header 'Content-Type: application/json'   --data '{"query":"query GetFruit {\n\tfruits {\n\t\tname\n\t\tcolor\n\t}\n}","variables":{"input":{"name":"Eugene"}},"operationName":"GetFruit"}'
+{"data": {"fruits": [{"name": "Banana", "color": "Yellow"}]}}
 ```
 ## This repository uses a couple of common libraries 
 
 ```requirements.txt
 Flask==1.1.4                # Flask Backend Library
-Flask-GraphQL==2.0.1        # Flask-GraphQL Interoperability Library
 bjoern==2.0.5               # Webserver Gateway Interface Library, used to interface flask with webserver
-graphql-core==2.3.2         # Graphql Core Library
 pydantic==1.6               # Type-safe model library. Asserts type safety of object fields to avoid type-related bugs
-graphene-pydantic==0.1.0    # Interoperability Library between pydantic pydantic_models and graphene pydantic_models
+strawberry-graphql==0.95.0  # a GraphQL library compatible with the type-safety library pydantic
 python-json-logger==2.0.2   # Formats the logs from the python logger into a json object. Json logs are easier to parse and log in log monitoring systems
 markupsafe==2.0.1           # Forcibly use 2.0.1 for markupsafe. Fixes a compatibility issue from Flask 1.1.4, https://itsmycode.com/importerror-cannot-import-name-json-from-itsdangerous/
 ```
