@@ -1,0 +1,8 @@
+Flask==1.1.4                # Flask Backend Library
+bjoern==2.0.5               # Webserver Gateway Interface Library, used to interface flask with webserver
+pydantic==1.6               # Type-safe model library. Asserts type safety of object fields to avoid type-related bugs
+strawberry-graphql==0.95.0  # a GraphQL library compatible with the type-safety library pydantic
+python-json-logger==2.0.2   # Formats the logs from the python logger into a json object. Json logs are easier to parse and log in log monitoring systems
+markupsafe==2.0.1           # Forcibly use 2.0.1 for markupsafe. Fixes a compatibility issue from Flask 1.1.4, https://itsmycode.com/importerror-cannot-import-name-json-from-itsdangerous/
+scikit-learn==1.0.2
+pandas==1.4.1
