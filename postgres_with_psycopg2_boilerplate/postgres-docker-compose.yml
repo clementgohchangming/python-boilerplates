@@ -1,0 +1,9 @@
+services:
+  postgresql:
+    image: postgres:12.4 # use version 12.4 to match production
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
